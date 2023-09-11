@@ -179,44 +179,76 @@ ul {
 }
 
 .summary__list > li {
-  padding: 1.25em;
+  position: relative;
+  border: 1px solid hsla(214, 35%, 30%, 0.1);
+  border-radius: 12px;
   margin-bottom: 0.9375em;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
 }
 
-.summary__list > li:nth-child(1) {
+.summary__list > li::before,
+.summary__list > li::after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+.summary__list > li::before {
+  top: -2px;
+  bottom: -2px;
+  left: 0.8em;
+  right: 0.8em;
+}
+
+.summary__list > li::after {
+  top: 0.8em;
+  bottom: 0.8em;
+  left: -2px ;
+  right: -2px;
+}
+
+.summary__list > li:nth-child(1),
+.summary__list > li:nth-child(1)::before,
+.summary__list > li:nth-child(1)::after {
   color: var(--clr-light-red);
   background-color: var(--clr-light-red-background);
 }
 
-.summary__list > li:nth-child(2) {
+.summary__list > li:nth-child(2),
+.summary__list > li:nth-child(2)::before,
+.summary__list > li:nth-child(2)::after {
   color: var(--clr-orange-yellow);
   background-color: var(--clr-orange-yellow-background);
 }
 
-.summary__list > li:nth-child(3) {
+.summary__list > li:nth-child(3),
+.summary__list > li:nth-child(3)::before,
+.summary__list > li:nth-child(3)::after {
   color: var(--clr-green-teal);
   background-color: var(--clr-green-teal-background);
 }
 
-.summary__list > li:nth-child(4) {
+.summary__list > li:nth-child(4),
+.summary__list > li:nth-child(4)::before,
+.summary__list > li:nth-child(4)::after {
   color: var(--clr-cobalt-blue);
   background-color: var(--clr-cobalt-blue-background);
 }
 
-.summary__list > li > p {
-  margin: 0 0.5em;
-  font-weight: 700;
+.summary__list  .list-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0 15px;
+  padding: 0.9375em;
 }
 
-.summary__list > li > p:last-child {
+.summary__list .list-container > p:last-child {
   margin-left: auto;
   color: hsl(214, 35%, 30%);
 }
 
-.summary__list > li > p:last-child span {
+.summary__list .list-container > p:last-child > span {
   color: hsl(214, 35%, 60%);
 }
 
@@ -229,13 +261,11 @@ ul {
   padding: 0.9375em 1.25em;
   color: var(--clr-white);
   background-color: hsl(214, 35%, 30%);
+  transition: background-color 0.2s ease-in;
 }
 
 .summary button:hover {
-  background-image: linear-gradient(
-    var(--clr-light-slate-blue),
-    var(--clr-light-royal-blue)
-  );
+  background-color: var(--clr-light-royal-blue);
 }
 
 @media (min-width: 40em) {
@@ -243,7 +273,7 @@ ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
     border-radius: 30px;
-    box-shadow: 0px 10px 40px 0px rgba(100, 100, 111, 0.2) ;
+    box-shadow: 0px 10px 40px 0px rgba(100, 100, 111, 0.2);
   }
 
   .score {
@@ -261,5 +291,9 @@ ul {
 
   .score, .summary {
     padding: 1.25em 0;
+  }
+
+  .summary button {
+    margin-top: 2.5em;
   }
 }
