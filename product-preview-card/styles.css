@@ -163,7 +163,7 @@ p {
   background-color: var(--clr-darker-cyan);
 }
 
-@media (min-width: 730px) {
+@media (min-width: 45.625em) {
   .product {
     display: grid;
     grid-template-columns: 1fr 1fr;
