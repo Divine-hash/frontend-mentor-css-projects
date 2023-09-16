@@ -46,7 +46,7 @@ body {
 ================================
 */
 .container {
-  width: 90%;
+  width: 95%;
   max-width: 1109px;
   display: grid;
   gap: calc(30em / 13);
