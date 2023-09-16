@@ -33,7 +33,7 @@ body {
   min-height: 100vh;
   font: calc(13rem / 16) / 1.5 'Barlow Semi Condensed', sans-serif;
   background: var(--clr-light-grayish-blue);
-  padding: 20px;
+  padding: 20px 0;
   display: grid;
   place-items: center;
 }
